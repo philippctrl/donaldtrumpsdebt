@@ -29,7 +29,7 @@ html {
 
 
 body {
-  max-width: 943px;
+  max-width: 843px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -98,6 +98,7 @@ h1 {
 }
 
 h2 {
+  padding-top: 32px;
   justify-self: start;
   align-self: flex-start;
   padding-bottom: 16px;
@@ -142,8 +143,7 @@ p {
 
 tr {
   width: 100%;
-
-
+  font-size: large;
 }
 
 tr {
@@ -157,15 +157,16 @@ td {
   padding: 16px 0;
 }
 
-td,
-p,
-span {
+td {
   text-align: start;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
+cite {
+  float: inline-end;
+}
 
 footer {
   width: 100%;
@@ -195,10 +196,10 @@ li a {
 
 
 
-@media screen and (max-width:900px) {
+@media screen and (max-width:743px) {
   body {
     width: 100%;
-    padding: 32px 16px;
+    padding: 66px 35px;
   }
 
   h1 {
