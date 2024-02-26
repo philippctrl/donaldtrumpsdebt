@@ -45,3 +45,27 @@ function getCurrentAmount() {
 function formatCurrency(amount) {
     return '$' + amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 }
+
+
+
+
+var originalBG = $("html").css("background-color");
+console.log(originalBG);
+var lightColor = originalBG;// "rgba(0.1, 0.1, 0.1, .1)";
+console.log(lightColor);
+var gradientSize = 256;
+$('html').mousemove(function (e) {
+    x = e.pageX - this.offsetLeft;
+    y = e.pageY - this.offsetTop;
+    xy = x + " " + y;
+    bgWebKit = "-webkit-gradient(radial, " + xy + ", 0, " + xy + ", " + gradientSize + ", from(rgba(255,200,255,0.1)), to(rgba(255,255,255,0.0))), " + originalBG;
+    bgMoz = "-moz-radial-gradient(" + x + "px " + y + "px 45deg, circle, " + lightColor + " 0%, " + originalBG + " " + gradientSize + "px)";
+
+    $("html")
+        .css({ background: bgWebKit })
+        .css({ background: bgMoz });
+}).mouseleave(function () {
+    $("html").css({
+        background: originalBG
+    });
+});
